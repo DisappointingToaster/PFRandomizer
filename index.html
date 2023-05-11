@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PF Loadout randomizer</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="mainWrapper">
+        <div class="weaponRandomizer">
+            <h3 id="primaryError" style="color:red">:)</h3>
+            <h3 id="secondaryError" style="color:red">:)</h3>
+            <h1 id="name1">test</h1>
+            <div>
+                <span>Optics: </span> <span id="POptics">None</span>
+            </div>
+            <div>
+                <span>Barrel: </span><span id="PBarrel">None</span>
+            </div>
+            <div>
+                <span>Underbarrel: </span><span id="PUnderbarrel">None</span>
+            </div>
+            <div>
+                <span>Other: </span><span id="POther">None</span>
+            </div>
+            <div>
+                <span>Ammo: </span><span id="PAmmo">None</span>
+            </div>
+            <h1 id="name2">test</h1>
+            <div>
+                <span>Optics: </span><span id="SOptics">None</span>
+            </div>
+            <div>
+                <span>Barrel: </span><span id="SBarrel">None</span>
+            </div>
+            <div>
+                <span>Other: </span><span id="SOther">None</span>
+            </div>
+            <div>
+                <span>Ammo: </span><span id="SAmmo">None</span>
+            </div>
+            <div>
+                <h1 >Grenade: </h1> <span id="Grenade">None</span>
+            </div>
+            <div>
+                <h1 >Melee: </h1> <span id="Melee">None</span>
+            </div>
+            
+            <div>
+                <br>
+                <button onclick="randomize()">Randomize weapon</button>
+            </div>
+        </div>
+        <div class="to-do">
+            <h1>To-do:</h1>
+            <ul>
+                <li>
+                    Add missing weapon-specific attachments
+                </li>
+                <li>
+                    Allow user to select owned melees
+                </li>
+                <li>
+                    Randomization based off of rank
+                </li>
+                <li>
+                    Clean up backend
+                </li>
+                <li>
+                    Make the page not look from 1994
+                </li>
+                <li>
+                    Map randomization?
+                </li>
+                <li>
+                    Challenges..? Anyone? Do people still do these?
+                </li>
+                <li>
+                    Individual weapon rerolling
+                </li>
+                <li>
+                    In-browser stat viewer. This is just wishful thinking tbh. 
+                </li>
+                <li>
+                    Mobile support
+                </li>
+                <li>
+                    Misc info addition - randomized weapon and attachment categories, etc.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="/randomizer.js"></script>
+</body>
+</html>

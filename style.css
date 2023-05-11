@@ -1,0 +1,11 @@
+.mainWrapper{
+    display: flex;
+    justify-content: baseline;
+    background-color: rgba(223, 225, 225, 0.47);
+}
+.to-do{
+    width: 100%;
+}
+.weaponRandomizer{
+    width: 100%;
+}

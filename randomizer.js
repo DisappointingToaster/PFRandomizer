@@ -16,7 +16,7 @@ const Grenade=document.getElementById("Grenade");
 
 //Weapons
 
-import { Primaries,Secondaries,Melees,Grenades } from "./weapons.js";
+import { Primaries,Secondaries,Melees,Grenades } from "/weapons.js";
 
 
 //Optics

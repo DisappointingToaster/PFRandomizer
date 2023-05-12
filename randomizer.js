@@ -13,209 +13,12 @@ const SecondaryOther = document.getElementById("SOther");
 const SecondaryAmmo = document.getElementById("SAmmo");
 const Melee=document.getElementById("Melee");
 const Grenade=document.getElementById("Grenade");
+
 //Weapons
-const Primaries=[
-    //ARs
-    "AK12",
-    "AN-94",
-    "AS VAL",
-    "SCAR-L",
-    "AUG A1",
-    "M16A4",
-    "G36",
-    "M16A1",
-    "M16A3",
-    "TYPE 20",
-    "AUG A2",
-    "K2",
-    "FAMAS F1",
-    "AK47",
-    "AUG A3",
-    "L85A2",
-    "HK416",
-    "AK74",
-    "AKM",
-    "AK103",
-    "TAR-21",
-    "TYPE-88",
-    "M231",
-    "C7A2",
-    "STG-44",
-    "G11K2",
-    //BRs
-    "M14",
-    "BEOWULF ECR",
-    "SCAR-H",
-    "AK12BR",
-    "G3A3",
-    "AG-3",
-    "HK417",
-    "HENRY 45-70",
-    "FAL 50.00",
-    //Carbines
-    "M4A1",
-    "G36K",
-    "M4",
-    "L22",
-    "SCAR PDW",
-    "AKU12",
-    "GROZA-1",
-    "OTS-126",
-    "AK12C",
-    "HONEY BADGER",
-    "K1A",
-    "SR-3M",
-    "GROZA-4",
-    "MC51",
-    "FAL 50.63 PARA",
-    "1858 CARBINE",
-    "AK105",
-    "JURY",
-    "KAC SSR",
-    "GRYOJET CARBINE",
-    "C8A2",
-    "X95R",
-    "HK51B",
-    "CAN CANNON",
-    //Shotguns
-    "KSG 12",
-    "MODEL 870",
-    "DBV12",
-    "KS-23M",
-    "SAIGA-12",
-    "STEVENDS DB",
-    "E-GUN",
-    "AA-12",
-    "SPAS-12",
-    "DT11",
-    "USAS-12",
-    //PDW
-    "MP5K",
-    "UMP45",
-    "G36C",
-    "MP7",
-    "MAC10",
-    "P90",
-    "COLT MARS",
-    "MP5",
-    "COLT SMG 633",
-    "L2A3",
-    "MP5SD",
-    "MP10",
-    "M3A1",
-    "MP5/10",
-    "UZI",
-    "AUG A3 PARA XS",
-    "K7",
-    "AKS74U",
-    "PPSH-41",
-    "FAL PARA SHORTY",
-    "KRISS VECTOR",
-    "PP-19 BIZON",
-    "MP40",
-    "X95 SMG",
-    "TOMMY GUN",
-    "RAMA 1130",
-    "BWC9 A",
-    "FIVE-0",
-    //DMRs
-    "MK11",
-    "SKS",
-    "SL-8",
-    "VSS VINTOREZ",
-    "MSG90",
-    "M21",
-    "BEOWULF TCR",
-    "SA58 SPR",
-    "SCAR SSR",
-    //LMGs
-    "COLT LMG",
-    "M60",
-    "AUG HBAR",
-    "MG36",
-    "RPK12",
-    "L86 LSW",
-    "RPK",
-    "HK21E",
-    "HAMR IAR",
-    "RPK74",
-    "MG3KWS",
-    "MGV-176",
-    "STONER 96",
-    "MG42",
-    //Sniper rifles
-    "INTERVENTION",
-    "MODEL 700",
-    "DRAGUNOV SVU",
-    "AWS",
-    "BFG 50",
-    "AWM",
-    "TRG-42",
-    "MOSIN NAGANT",
-    "DRAGUNOV SVDS",
-    "M1903",
-    "K14",
-    "HECATE II",
-    "FT300",
-    "M107",
-    "STERY SCOUT",
-    "WA2000",
-    "NTW-20"
-]
-const Secondaries=[
-    //Pistols
-    "G17",
-    "M9",
-    "M1911A1",
-    "DESERT EAGLE L5",
-    "G21",
-    "G23",
-    "M43A1",
-    "G40",
-    "KG-99",
-    "G50",
-    "FIVE SEVEN",
-    "ZIP 22",
-    "GI M1",
-    "HARDBALLER",
-    "IZHEVSK PB",
-    "MAKAROV PM",
-    "GB-22",
-    "DESERT EAGLE XIX",
-    "AUTOMAG III",
-    "GYROJET MARK I",
-    "GSP",
-    "GRIZZLY",
-    "M2011",
-    "ALIEN",
-    "AF2011-A1",
-    //Machine Pistols
-    "G18C",
-    "93R",
-    "PP-2000",
-    "TEC-9",
-    "MICRO UZI",
-    "ŠKORPION VZ.61",
-    "ASMI",
-    "MP1911",
-    "ARM PISTOL",
-    //Revolvers
-    "MP412 REX",
-    "MATEBA 6",
-    "1858 NEW ARMY",
-    "REDHAWK 44",
-    "JUDGE",
-    "EXECUTIONER",
-    //Other
-    "SUPER SHORTY",
-    "SFG 50",
-    "M79 THUMPER",
-    "ADVANCED COILGUN",
-    "SAWED OFF",
-    "SAIGA-12U",
-    "OBREZ",
-    "SASS 308"
-]
+
+import { Primaries,Secondaries,Melees,Grenades } from "./weapons.js";
+
+
 //Optics
 const IronSights=[
     "DEFAULT",
@@ -241,7 +44,26 @@ const IronSights=[
     "QUICK RELEASE SIGHT",
     "MBUS SIGHT",
     "AAC FLIP UP SIGHT",
-    "DIAL APERTURE SIGHT"
+    "DUAL APERTURE SIGHT"
+]
+//STG-44
+const IronSights2=[
+    "DEFAULT",
+    "BACKUP SIGHT",
+    "DOUBLE OPEN SIGHT",
+    "SUPER SLIM SIGHT",
+    "DIOPTER SIGHT",
+    "BUIS SIGHT",
+    "KEL-TEC SIGHT",
+    "KAC SIGHT",
+    "1200M SIGHT",
+    "HERSTAL SIGHT",
+    "IWI SIGHT",
+    "CARRY HANDLE SIGHT",
+    "QUICK RELEASE SIGHT",
+    "MBUS SIGHT",
+    "AAC FLIP UP SIGHT",
+    "DUAL APERTURE SIGHT"
 ]
 const RedDots=[
     "Z-POINT",
@@ -260,6 +82,8 @@ const RedDots=[
     "KOBRA EKP SIGHT",
     "ACRO P-1 SIGHT",
     "BARKSA ELECTRO SIGHT",
+    "EOTECH M40",
+    "KOUSAKU SIGHT",
     "MICRODOT SRS",
     "OKP-7",
     "UH-1 SIGHT",
@@ -284,6 +108,28 @@ const Scopes=[
     "PU-1 SCOPE",
     "FF-3X NV",
     "PSO-1M2 SCOPE",
+    "TA01 ACOG",
+    "ELECTRA SX",
+    "REFLECTOR SCOPE",
+    "VCOG 8X SCOPE",
+    "SUSAT SCOPE",
+    "GLOBAL OFFENSIVE"
+]
+//M14
+const Scopes2=[
+    "C79",
+    "PK-A",
+    "M145",
+    "MALCOLM 3X SCOPE",
+    "TA44 ACOG",
+    "ACOG SCOPE",
+    "VCOG 6X SCOPE",
+    "MALCOLM 6X SCOPE",
+    "TA33 ACOG",
+    "HENSOLDT Z24",
+    "TA11 ACOG",
+    "PU-1 SCOPE",
+    "FF-3X NV",
     "TA01 ACOG",
     "ELECTRA SX",
     "REFLECTOR SCOPE",
@@ -329,9 +175,20 @@ const POptics={
     "TYPE-88":[...IronSights,...RedDots,...Scopes,...SpecialSights],
     "M231":[...IronSights,...RedDots,...Scopes,...SpecialSights],
     "C7A2":[...IronSights,...RedDots,...Scopes,...SpecialSights],
-    "STG-44":[...IronSights,...RedDots,...Scopes,...SpecialSights],
-    "G11K2":[...IronSights,...RedDots,...Scopes,...SpecialSights]
+    "STG-44":[...IronSights2,...RedDots,...Scopes,...SpecialSights],
+    "G11K2":[...IronSights,...RedDots,...Scopes,...SpecialSights],
+    "M14":[...RedDots,...Scopes2,"CARRY HANDLE SIGHT","OEG","MAGLITE","AMT-TERMINATOR","HANDMADE SIGHT","PLAGUE INSIGHT"],
+    "BEOWULF ECR":[...IronSights,...RedDots,...Scopes,...SpecialSights],
+    "SCAR-H":[...IronSights,...RedDots,...Scopes,...SpecialSights,"PM II"],
+    "AK12BR":[...IronSights,...RedDots,...Scopes,...SpecialSights],
+    "G3A3":[...IronSights,...RedDots,...Scopes,...SpecialSights],
+    "AG-3":[...IronSights,...RedDots,...Scopes,...SpecialSights],
+    "HK417":[...IronSights,...RedDots,...Scopes,...SpecialSights],
+    "HENRY 45-70":[...IronSights,...RedDots,...Scopes,...SpecialSights,'MALCOLM 6X SCOPE'],
+    "FAL 50.00":[...IronSights,...RedDots,...Scopes,...SpecialSights]
+
 }
+
 const SOptics={
     "DEFAULT":[...IronSights,...RedDots,...Scopes,...SpecialSights]
 }
@@ -359,6 +216,15 @@ const Suppressors=[
     "PBS-4 SUPPRESSOR",
     "MUFFLER",
     "OIL FILTER",
+]
+//HENRY 410
+const Suppressors2=[
+    "SUPPRESSOR",
+    "R2 SUPPRESSOR",
+    "ARS SUPPRESSOR",
+    "PBS-1 SUPPRESSOR",
+    "PBS-4 SUPPRESSOR",
+    "MUFFLER",
 ]
 const PBarrels={
     "DEFAULT":[...Muzzles,...Suppressors],
@@ -388,7 +254,17 @@ const PBarrels={
     "M231":["CARBINE BARREL",...Muzzles,...Suppressors],
     "C7A2":["CARBINE BARREL",...Muzzles,...Suppressors,"LSW BARREL"],
     "STG-44":[...Muzzles,...Suppressors],
-    "G11K2":[...Muzzles,...Suppressors]
+    "G11K2":[...Muzzles,...Suppressors],
+    "M14":[...Muzzles,...Suppressors],
+    "BEOWULF ECR":[...Muzzles,...Suppressors],
+    "SCAR-H":[...Muzzles,...Suppressors],
+    "AK12BR":[...Muzzles,...Suppressors],
+    "G3A3":[...Muzzles,...Suppressors],
+    "AG-3":[...Muzzles,...Suppressors],
+    "HK417":[...Muzzles,...Suppressors,"SHORT BARREL","SQUAD BARREL"],
+    "HENRY 45-70":[...Muzzles,...Suppressors2],
+    "FAL 50.00":[...Muzzles,...Suppressors]
+
 }
 const SBarrels={
     "DEFAULT":[...Muzzles,...Suppressors]
@@ -415,35 +291,57 @@ const Grips=[
     "HERA CQR GRIP",
     "CHAINSAW GRIP"
 ]
+const Grips2=[
+    "VERTICAL GRIP",
+    "ANGLED GRIP",
+    "POTATO GRIP",
+    "SKELETON GRIP",
+    "FOLDING GRIP",
+    "STUBBY GRIP",
+    "PISTOL GRIP",
+    "SIDEWAYS GRIP",
+    "HERA CQR GRIP",
+    "CHAINSAW GRIP",
+    "ROMANIAN GRIP"
+]
 const PUnderbarrels={
     "DEFAULT":[...Accessories,...Grips],
      //ARs
     "AK12":[...Accessories,...Grips],
-    "AN-94":[...Accessories,...Grips,"ROMANIAN GRIP"],
+    "AN-94":[...Accessories,...Grips2],
     "AS VAL":[...Accessories,...Grips],
     "SCAR-L":[...Accessories,...Grips],
     "AUG A1":[...Accessories,...Grips],
     "M16A4":[...Accessories,...Grips],
-    "G36":[...Accessories,...Grips,"ROMANIAN GRIP"],
+    "G36":[...Accessories,...Grips2],
     "M16A1":[...Accessories,...Grips],
     "M16A3":[...Accessories,...Grips],
     "TYPE 20":[...Accessories,...Grips],
     "AUG A2":[...Accessories,...Grips],
     "K2":[...Accessories,...Grips],
     "FAMAS F1":[...Accessories,...Grips],
-    "AK47":[...Accessories,...Grips,"ROMANIAN GRIP"],
+    "AK47":[...Accessories,...Grips2],
     "AUG A3":[...Accessories,...Grips],
     "L85A2":[...Accessories,...Grips],
     "HK416":[...Accessories,...Grips],
-    "AK74":[...Accessories,...Grips,"ROMANIAN GRIP"],
-    "AKM":[...Accessories,...Grips,"ROMANIAN GRIP"],
-    "AK103":[...Accessories,...Grips,"ROMANIAN GRIP"],
+    "AK74":[...Accessories,...Grips2],
+    "AKM":[...Accessories,...Grips2],
+    "AK103":[...Accessories,...Grips2],
     "TAR-21":[...Accessories,...Grips],
-    "TYPE-88":[...Accessories,...Grips,"ROMANIAN GRIP"],
+    "TYPE-88":[...Accessories,...Grips2],
     "M231":[...Accessories,...Grips],
     "C7A2":[...Accessories,...Grips],
     "STG-44":[...Accessories,...Grips],
-    "G11K2":[...Accessories,...Grips,"ROMANIAN GRIP"]
+    "G11K2":[...Accessories,...Grips2],
+    "M14":[...Accessories,...Grips2],
+    "BEOWULF ECR":[...Accessories,...Grips2],
+    "SCAR-H":[...Accessories,...Grips],
+    "AK12BR":[...Accessories,...Grips],
+    "G3A3":[...Accessories,...Grips],
+    "AG-3":[...Accessories,...Grips],
+    "HK417":[...Accessories,...Grips],
+    "HENRY 45-70":[...Accessories,...Grips],
+    "FAL 50.00":[...Accessories,...Grips2]
 }
 //Others
 const OAccessories=[
@@ -494,7 +392,16 @@ const POther={
     "M231":[...OAccessories,...CantedSight,"WIRE STOCK"],
     "C7A2":[...OAccessories,...CantedSight,...Stocks,"FULL STOCK","REMOVE STOCK"],
     "STG-44":[...OAccessories],
-    "G11K2":[...OAccessories,...CantedSight]
+    "G11K2":[...OAccessories,...CantedSight],
+    "M14":[...OAccessories],
+    "BEOWULF ECR":[...OAccessories,...CantedSight,...Stocks,"REMOVE STOCK","COLLAPSIBLE STOCK"],
+    "SCAR-H":[...OAccessories,...CantedSight,...Stocks,"REMOVE STOCK"],
+    "AK12BR":[...OAccessories,...CantedSight,...Stocks],
+    "G3A3":[...OAccessories,...CantedSight,...Stocks,"COLLAPSIBLE STOCK"],
+    "AG-3":[...OAccessories,...CantedSight,...Stocks,"FULL STOCK"],
+    "HK417":[...OAccessories,...CantedSight,...Stocks,"FULL STOCK"],
+    "HENRY 45-70":[...OAccessories,...CantedSight,"REMOVE STOCK","MARKSMAN KIT"],
+    "FAL 50.00":[...OAccessories,...CantedSight]
 }
 const SOther={
     "DEFAULT":[...OAccessories,...CantedSight]
@@ -534,128 +441,22 @@ const PAmmo={
     "M231":[...Ammo,"M855",".223 REM"],
     "C7A2":[...Ammo,".223 REM","7.62X39MM",".20 TACT"],
     "STG-44":[...Ammo,"5.5X45MM"],
-    "G11K2":[...Ammo]
+    "G11K2":[...Ammo],
+    "M14":[...Ammo,"SILENT","6.5MM"],
+    "BEOWULF ECR":[...Ammo,".458 SOCOM","5.56X45MM",".410 BORE"],
+    "SCAR-H":[...Ammo,"SILENT","7.62X39MM"],
+    "AK12BR":[...Ammo,"7.62X39MM","12.7X55MM"],
+    "G3A3":[...Ammo,"SILENT",".45 ACP"],
+    "AG-3":[...Ammo,"SILENT"],
+    "HK417":[...Ammo,"SILENT"],
+    "HENRY 45-70":["PLUS P","TRACERLESS",".30-30",".357 MAGNUM",".410 BORE","DEFAULT"],
+    "FAL 50.00":[...Ammo,"SILENT","5.56X45MM",".45 ACP"]
 }
 const SAmmo={
     "DEFAULT":[...Ammo]
 }
-//Grenades
-const Grenades=[
-    "M67 FRAG",
-    "MK 2 FRAG",
-    "M24 STICK",
-    "M26 FRAG",
-    "M560 MINI",
-    "V40 MINI",
-    "ROLY HG",
-    "DYNAMITE-3",
-    "DYNAMITE",
-    "RGD-5 HE",
-    "SEMTEX",
-    "PB GRENADE",
-    "BUNDLE CHARGE",
-    "T-13 IMPACT",
-    "RGN UDZS",
-    "RGO UDZS"
-]
-//Melees
-const Melees=[
-    //One hand blades
-    "CLEAVER",
-    "KARAMBIT",
-    "KRAMPUS KUKRI",
-    "WAR FAN",
-    "NATA HATCHET",
-    "TANZINATE BLADE",
-    "KUNAI",
-    "TACTICAL SPATULA",
-    "MEK'LETH",
-    "TANTO",
-    "HUNTING KNIFE",
-    "KNIFE",
-    "TRENCH KNIFE",
-    "GOSPELL BLADE",
-    "ENTRENCHER",
-    "RITUAL SICKLE",
-    "KAMA",
-    "KEY",
-    "ICE PICK",
-    "MACHETE",
-    "TOMAHAWK",
-    "POCKET KNIFE",
-    "HAVOC BLADE",
-    "CUTTER",
-    "JASON",
-    "BRIDAL BRANDISHER",
-    "DARKHEART",
-    "STREITER",
-    "BALISONG",
-    "KOMMANDO",
-    "LINKED SWORD",
-    "CLASSIC KNIFE",
-    "HRUNTING",
-    //Two hand blades
-    "ZIRCON TRIDENT",
-    "NORDIC WAR AXE",
-    "ICEMOURNE",
-    "WORLD BUSTER",
-    "NOOBSLAYER",
-    "HATTORI",
-    "CHOSEN ONE",
-    "REAPER",
-    "ZERO CUTTER",
-    "NAGINATA",
-    "TRAINING BAYONET",
-    "LONGSWORD",
-    "FIREAXE",
-    "HARVESTER",
-    "ZWEIHANDER",
-    //One Hand Blunts
-    "ASP BATON",
-    "TOY GUN",
-    "MAGLITE CLUB",
-    "CROWBAR",
-    "MJOLNIR",
-    "KEYBOARD",
-    "FLAME OF OLYMPIA",
-    "PACIFIC FM",
-    "FUMELEE",
-    "CANDY CANE",
-    "BARE FISTS",
-    "TANZANITE PICK",
-    "STICK GRENADE",
-    "BLOXY",
-    "HOLIDAY TEA",
-    "TRENCH MACE",
-    "CLONKER",
-    "NIGHTSTICK",
-    "STUN GUN",
-    "UCHIWA",
-    "FIXER",
-    "BRASS KNUCKLES",
-    "CRICKET BAT",
-    "FRYING PAN",
-    "ARM CANNON",
-    "STARLIS FUNPOST",
-    "THE COUNTDOWN",
-    //Two hand blunts
-    "SLEDGE HAMMER",
-    "ZIRCON SLAMSICKLE",
-    "WARHAMMER",
-    "HOCKEY STICK",
-    "SWEEPER",
-    "BASEBALL BAT",
-    "PADDLE",
-    "CURSED SHINAI",
-    "BANJO",
-    "STYLIS BRUSH",
-    "KANABO",
-    "STOPPER",
-    "THE AXE",
-    "VOID STAFF",
-    "MORNING STAR"
-    
-]
+
+
 function randomizeAttachments(Primary,Secondary){
     if(!(Primary in POptics)){
         Primary="DEFAULT";
@@ -690,19 +491,24 @@ function randomizeAttachments(Primary,Secondary){
     let randomSAmmo = SAmmo[Secondary][Math.floor(Math.random() * SAmmo[Secondary].length)];
     SecondaryAmmo.innerText=randomSAmmo;
 }
-
+console.log(Primaries.length+Secondaries.length)
 function randomize(){
+    
     //Primary
-    let randomPrimary = Primaries[Math.floor(Math.random() * Primaries.length)];
+    let randomPrimary = Primaries[Math.floor(Math.random() * Primaries.length)][0];
     header1.innerText=randomPrimary;
     //Secondary
-    let randomSecondary = Secondaries[Math.floor(Math.random() * Secondaries.length)];
+    let randomSecondary = Secondaries[Math.floor(Math.random() * Secondaries.length)][0];
     header2.innerText=randomSecondary;
     randomizeAttachments(randomPrimary,randomSecondary);
     //Grenade
-    let randomGrenade = Grenades[Math.floor(Math.random() * Grenades.length)];
+    let randomGrenade = Grenades[Math.floor(Math.random() * Grenades.length)][0];
     Grenade.innerText=randomGrenade;
     //Melee
     let randomMelee = Melees[Math.floor(Math.random() * Melees.length)];
     Melee.innerText=randomMelee;
 }
+const button=document.getElementById("randButton");
+button.addEventListener('click',function(){
+    randomize();
+});

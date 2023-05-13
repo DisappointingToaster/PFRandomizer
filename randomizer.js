@@ -1319,7 +1319,28 @@ const SAmmo={
     "OBREZ":["DEFAULT","TRACERLESS","8X50MMR",".410 BORE"],
     "SASS 308":[...Ammo,"SILENT",".358 WIN"]
 }
-
+function randomizePrimary(Primary){
+    let randomPOptic = POptics[Primary][Math.floor(Math.random() * POptics[Primary].length)];
+    PrimaryOptic.innerText=randomPOptic;
+    let randomPBarrel = PBarrels[Primary][Math.floor(Math.random() * PBarrels[Primary].length)];
+    PrimaryBarrel.innerText=randomPBarrel;
+    let randomPUnderarrel = PUnderbarrels[Primary][Math.floor(Math.random() * PUnderbarrels[Primary].length)];
+    PrimaryUnderbarrel.innerText=randomPUnderarrel;
+    let randomPOther = POther[Primary][Math.floor(Math.random() * POther[Primary].length)];
+    PrimaryOther.innerText=randomPOther;
+    let randomPAmmo = PAmmo[Primary][Math.floor(Math.random() * PAmmo[Primary].length)];
+    PrimaryAmmo.innerText=randomPAmmo;
+}
+function randomizeSecondary(Secondary){
+    let randomSOptic = SOptics[Secondary][Math.floor(Math.random() * SOptics[Secondary].length)];
+    SecondaryOptic.innerText=randomSOptic;
+    let randomSBarrel = SBarrels[Secondary][Math.floor(Math.random() * SBarrels[Secondary].length)];
+    SecondaryBarrel.innerText=randomSBarrel;
+    let randomSOther = SOther[Secondary][Math.floor(Math.random() * SOther[Secondary].length)];
+    SecondaryOther.innerText=randomSOther;
+    let randomSAmmo = SAmmo[Secondary][Math.floor(Math.random() * SAmmo[Secondary].length)];
+    SecondaryAmmo.innerText=randomSAmmo;
+}
 
 function randomizeAttachments(Primary,Secondary){
     if(!(Primary in POptics)){
@@ -1335,37 +1356,23 @@ function randomizeAttachments(Primary,Secondary){
         SecondaryError.innerText="";
     }
     //Primary block
-    let randomPOptic = POptics[Primary][Math.floor(Math.random() * POptics[Primary].length)];
-    PrimaryOptic.innerText=randomPOptic;
-    let randomPBarrel = PBarrels[Primary][Math.floor(Math.random() * PBarrels[Primary].length)];
-    PrimaryBarrel.innerText=randomPBarrel;
-    let randomPUnderarrel = PUnderbarrels[Primary][Math.floor(Math.random() * PUnderbarrels[Primary].length)];
-    PrimaryUnderbarrel.innerText=randomPUnderarrel;
-    let randomPOther = POther[Primary][Math.floor(Math.random() * POther[Primary].length)];
-    PrimaryOther.innerText=randomPOther;
-    let randomPAmmo = PAmmo[Primary][Math.floor(Math.random() * PAmmo[Primary].length)];
-    PrimaryAmmo.innerText=randomPAmmo;
+    randomizePrimary(Primary);
     //Secondary block
-    let randomSOptic = SOptics[Secondary][Math.floor(Math.random() * SOptics[Secondary].length)];
-    SecondaryOptic.innerText=randomSOptic;
-    let randomSBarrel = SBarrels[Secondary][Math.floor(Math.random() * SBarrels[Secondary].length)];
-    SecondaryBarrel.innerText=randomSBarrel;
-    let randomSOther = SOther[Secondary][Math.floor(Math.random() * SOther[Secondary].length)];
-    SecondaryOther.innerText=randomSOther;
-    let randomSAmmo = SAmmo[Secondary][Math.floor(Math.random() * SAmmo[Secondary].length)];
-    SecondaryAmmo.innerText=randomSAmmo;
+    randomizeSecondary(Secondary);
 }
 console.log(Primaries.length+Secondaries.length)
+var randomPrimary;
+var randomSecondary;
 function randomize(){
     
     //Primary
     let randomPNumber=Math.floor(Math.random() * Primaries.length);
-    let randomPrimary = Primaries[randomPNumber][0];
+    randomPrimary= Primaries[randomPNumber][0];
     header1.innerText=randomPrimary+" - "+Primaries[randomPNumber][2]+" Rank "+Primaries[randomPNumber][1];
     console.log(randomPrimary)
     //Secondary
     let randomSnumber=Math.floor(Math.random() * Secondaries.length);
-    let randomSecondary = Secondaries[randomSnumber][0];
+    randomSecondary = Secondaries[randomSnumber][0];
     header2.innerText=randomSecondary+" - "+Secondaries[randomSnumber][2]+" Rank "+Secondaries[randomSnumber][1];
     randomizeAttachments(randomPrimary,randomSecondary);
     //Grenade
@@ -1381,3 +1388,11 @@ const button=document.getElementById("randButton");
 button.addEventListener('click',function(){
     randomize();
 });
+const wepAttachRerollButton1=document.getElementById("primaryAttachments");
+wepAttachRerollButton1.addEventListener('click',function(){
+    randomizePrimary(randomPrimary);
+})
+const wepAttachRerollButton2=document.getElementById("secondaryAttachments");
+wepAttachRerollButton2.addEventListener('click',function(){
+    randomizeSecondary(randomSecondary);
+})

@@ -316,4 +316,7 @@ const Grenades=[
     ["RGN UDZS",80,"Impact"],
     ["RGO UDZS",114,"Impact"]
 ]
+Primaries.sort((a,b)=>a[1]-b[1]);
+Secondaries.sort((a,b)=>a[1]-b[1]);
+Grenades.sort((a,b)=>a[1]-b[1]);
 export {Primaries,Secondaries,Melees,Grenades};

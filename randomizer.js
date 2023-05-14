@@ -677,7 +677,7 @@ const SBarrels={
     "M79 THUMPER":["COMPENSATOR","DEFAULT","MUZZLE BREKE","T-BRAKE","X-RING","LOUDENER","CUT DOWN BARREL"],
     "ADVANCED COILGUN":["DEFAULT"],
     "SAWED OFF":[...Muzzles,"MUFFLER","FULL CHOKE","IMPROVED CHOKE","DUCKBILL CHOKE","MODIFIED CHOKE","PARADOX CHOKE","DIVERTER"],
-    "SAIGA-12U":[...Muzzles,...Suppressors,"IMPROVED CHOKE","DUCKBILL CHOKE","MODIFIED CHOKE","PARADOX CHOKE","DIVERTER"],
+    "SAIGA-12U":[...Muzzles,...Suppressors,"IMPROVED CHOKE","DUCKBILL CHOKE","MODIFIED CHOKE","PARADOX CHOKE"],
     "OBREZ":[...Muzzles,...Suppressors,"FRONT POST","LONG BARREL"],
     "SASS 308":[...Muzzles,...Suppressors,"LIGHT BARREL"]
 }
@@ -1360,23 +1360,47 @@ function randomizeAttachments(Primary,Secondary){
     //Secondary block
     randomizeSecondary(Secondary);
 }
-console.log(Primaries.length+Secondaries.length)
-var randomPrimary;
-var randomSecondary;
+//console.log(Primaries.length+Secondaries.length)
+var randomPrimary="DEFAULT";
+var randomSecondary="DEFAULT";
+
+
 function randomize(){
+    let inputBox=document.getElementById("userRank").value;
+    let upperPrimaryLimit= Primaries.indexOf(Primaries.find((value)=>{
+        return value[1]>inputBox
+    }));
     
+    if(upperPrimaryLimit===-1){
+       upperPrimaryLimit=Primaries.length;
+    }
+
+    let upperSecondaryLimit= Secondaries.indexOf(Secondaries.find((value)=>{
+        return value[1]>inputBox
+    }));
+    
+    if(upperSecondaryLimit===-1){
+        upperSecondaryLimit=Secondaries.length;
+    }
+    let upperGrenadeLimit= Grenades.indexOf(Grenades.find((value)=>{
+            return value[1]>inputBox
+        }));
+    
+    if(upperGrenadeLimit===-1){
+        upperGrenadeLimit=Grenades.length;
+    }
     //Primary
-    let randomPNumber=Math.floor(Math.random() * Primaries.length);
+    let randomPNumber=Math.floor(Math.random() * upperPrimaryLimit);
     randomPrimary= Primaries[randomPNumber][0];
     header1.innerText=randomPrimary+" - "+Primaries[randomPNumber][2]+" Rank "+Primaries[randomPNumber][1];
-    console.log(randomPrimary)
+    //console.log(randomPrimary)
     //Secondary
-    let randomSnumber=Math.floor(Math.random() * Secondaries.length);
+    let randomSnumber=Math.floor(Math.random() * upperSecondaryLimit);
     randomSecondary = Secondaries[randomSnumber][0];
     header2.innerText=randomSecondary+" - "+Secondaries[randomSnumber][2]+" Rank "+Secondaries[randomSnumber][1];
     randomizeAttachments(randomPrimary,randomSecondary);
     //Grenade
-    let randomGNumber=Math.floor(Math.random() * Grenades.length);
+    let randomGNumber=Math.floor(Math.random() * upperGrenadeLimit);
     let randomGrenade = Grenades[randomGNumber][0];
     Grenade.innerText=randomGrenade+" - "+Grenades[randomGNumber][2]+" Rank "+Grenades[randomGNumber][1];;
     //Melee

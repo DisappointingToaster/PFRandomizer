@@ -1,11 +1,44 @@
 .mainWrapper{
     display: flex;
     justify-content: baseline;
-    background-color: rgba(223, 225, 225, 0.47);
 }
-.to-do{
-    width: 60%;
-}
+
 .weaponRandomizer{
     width: 100%;
+    display: flex;
+    
+}
+body{
+    background-color: #1E1F22;
+    color: antiquewhite;
+    min-height: 100vh;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.button{
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 5px 8px;
+    background-color: rgb(20, 135, 230);
+    text-decoration: none;
+    color: antiquewhite;
+}
+.gunDisplay{
+    width: 30%;
+    padding-top: 10px;
+    padding-left: 20px
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+
+input{
+    margin-bottom: 10px;
+}
+.rankBox{
+    margin-right: 30px;
+    margin-top: 20px;
 }

@@ -10,16 +10,18 @@
 <body>
     <div class="mainWrapper">
         <div class="weaponRandomizer">
-            <div>
-                <label>Enter your rank: </label><input id="userRank" type="number" value="150">
+            <div class="rankBox">
+                <H4>Enter your rank: </H4><input id="userRank" type="number" value="150">
+                    <br>
+                    <button id="randButton" class="button">Randomize weapon</button>
             </div>
             <div>
                 <h3 id="primaryError" style="color:red"></h3>
                 <h3 id="secondaryError" style="color:red"></h3>
             </div>
-            <div>
+            <div class="gunDisplay">
                 <h1 id="name1">Gun</h1>
-                <button id="primaryAttachments">Reroll weapon attachments</button>
+                <button id="primaryAttachments" class="button">Reroll weapon attachments</button>
                 <br>
                 <br>
                 <div>
@@ -37,10 +39,16 @@
                 <div>
                     <span>Ammo: </span><span id="PAmmo">None</span>
                 </div>
+                <div>
+                    <h1 >Grenade: </h1> <span id="Grenade">None</span>
+                </div>
+                <div>
+                    <h1 >Melee: </h1> <span id="Melee">None</span>
+                </div>
             </div>
-            <div>
+            <div class="gunDisplay">
                 <h1 id="name2">Gun 2</h1>
-                <button id="secondaryAttachments">Reroll weapon attachments</button>
+                <button id="secondaryAttachments" class="button">Reroll weapon attachments</button>
                 <br>
                 <br>
                 <div>
@@ -55,55 +63,8 @@
                 <div>
                     <span>Ammo: </span><span id="SAmmo">None</span>
                 </div>
-                <div>
-                    <h1 >Grenade: </h1> <span id="Grenade">None</span>
-                </div>
-                <div>
-                    <h1 >Melee: </h1> <span id="Melee">None</span>
-                </div>
             </div>
-            <div>
-                <br>
-                <button id="randButton">Randomize weapon</button>
-            </div>
-        </div>
-        <div class="to-do">
-            <h1>To-do:</h1>
-            <ul>
-                <li>
-                    Add missing weapon-specific attachments (Done)
-                </li>
-                <li>
-                    Allow user to select owned melees
-                </li>
-                <li>
-                    Randomization based off of rank
-                </li>
-                <li>
-                    Clean up backend
-                </li>
-                <li>
-                    Make the page not look from 1994
-                </li>
-                <li>
-                    Map randomization?
-                </li>
-                <li>
-                    Challenges..? Anyone? Do people still do these?
-                </li>
-                <li>
-                    Individual weapon rerolling
-                </li>
-                <li>
-                    In-browser stat viewer. This is just wishful thinking tbh. 
-                </li>
-                <li>
-                    Mobile support
-                </li>
-                <li>
-                    Misc info addition - randomized weapon and attachment categories, etc.
-                </li>
-            </ul>
+            
         </div>
     </div>
     <script src="randomizer.js" type="module"></script>

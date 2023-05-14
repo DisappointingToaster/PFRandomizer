@@ -1364,7 +1364,8 @@ function randomizeAttachments(Primary,Secondary){
 var randomPrimary="DEFAULT";
 var randomSecondary="DEFAULT";
 
-
+const rankDisplay1=document.getElementById("cattegory1");
+const rankDisplay2=document.getElementById("cattegory2");
 function randomize(){
     let inputBox=document.getElementById("userRank").value;
     let upperPrimaryLimit= Primaries.indexOf(Primaries.find((value)=>{
@@ -1392,12 +1393,15 @@ function randomize(){
     //Primary
     let randomPNumber=Math.floor(Math.random() * upperPrimaryLimit);
     randomPrimary= Primaries[randomPNumber][0];
-    header1.innerText=randomPrimary+" - "+Primaries[randomPNumber][2]+" Rank "+Primaries[randomPNumber][1];
+    header1.innerText=randomPrimary;
+    rankDisplay1.innerText="Rank "+Primaries[randomPNumber][1]+" - "+Primaries[randomPNumber][2];
     //console.log(randomPrimary)
     //Secondary
     let randomSnumber=Math.floor(Math.random() * upperSecondaryLimit);
     randomSecondary = Secondaries[randomSnumber][0];
-    header2.innerText=randomSecondary+" - "+Secondaries[randomSnumber][2]+" Rank "+Secondaries[randomSnumber][1];
+    header2.innerText=randomSecondary;
+    rankDisplay2.innerText="Rank "+Secondaries[randomSnumber][1]+" - "+Secondaries[randomSnumber][2];
+
     randomizeAttachments(randomPrimary,randomSecondary);
     //Grenade
     let randomGNumber=Math.floor(Math.random() * upperGrenadeLimit);
@@ -1420,3 +1424,35 @@ const wepAttachRerollButton2=document.getElementById("secondaryAttachments");
 wepAttachRerollButton2.addEventListener('click',function(){
     randomizeSecondary(randomSecondary);
 })
+const maps=[
+    "Bazaar",
+    "Black site",
+    "Castle Keep",
+    "Containers O' Fun",
+    "Crane Site",
+    "Crane Site Revamp",
+    "Derrick",
+    "Desert Storm",
+    "Dunes",
+    "Dust Bowl",
+    "Elevation",
+    "Fortress",
+    "Height",
+    "Highway Lot",
+    "Industry",
+    "Mall",
+    "Mall Revamp",
+    "Metro",
+    "Metro Revamp",
+    "Mirage Revamp",
+    "Office",
+    "Penthouse",
+    "Ravod 2016",
+    "Ravod 911 Revamp",
+    "Rig",
+    "Ruins",
+    "Second Storm",
+    "Suburbia",
+    "Transit",
+    "Warehouse"
+]

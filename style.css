@@ -6,14 +6,14 @@
 .weaponRandomizer{
     width: 100%;
     display: flex;
-    
+    margin-left: 20px;
 }
 body{
     background-color: #1E1F22;
     color: antiquewhite;
-    min-height: 100vh;
-    padding-left: 10px;
-    padding-top: 10px;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 .button{
     border-radius: 4px;
@@ -26,13 +26,15 @@ body{
 .gunDisplay{
     width: 30%;
     padding-top: 10px;
-    padding-left: 20px
+    padding-left: 20px;
+    margin:20px;
 }
 footer{
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 95vw;
     height: 2.5rem;
+    padding-left: 10px;
 }
 
 input{
@@ -41,4 +43,7 @@ input{
 .rankBox{
     margin-right: 30px;
     margin-top: 20px;
+}
+.mapRandomizer{
+    margin-left: 70px;
 }

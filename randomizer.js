@@ -443,7 +443,7 @@ const Muzzles=[
     "DEFAULT",
     "FLASH HIDER",
     "COMPENSATOR",
-    "MUZZLE BREAK",
+    "MUZZLE BRAKE",
     "T-BRAKE",
     "X-RING",
     "HALBEK DEVICE",
@@ -1306,7 +1306,7 @@ const SAmmo={
     "MP412 REX":[...Ammo,".38 SPECIAL"],
     "MATEBA 6":[...Ammo,".44 SPECIAL"],
     "1858 NEW ARMY":[...Ammo,".38 CALIBER","SNAKE SHOT"],
-    "REDHAWK 44":[...Ammo,".44 SPECIAL",".48 LONG COLT"],
+    "REDHAWK 44":[...Ammo,".44 SPECIAL",".46 LONG COLT"],
     "JUDGE":[...Ammo3],
     "EXECUTIONER":[...Ammo],
     //Other
